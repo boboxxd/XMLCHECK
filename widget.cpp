@@ -11,6 +11,7 @@ Widget::Widget(QWidget *parent) :
     connect(ui->beforebtn,SIGNAL(clicked(bool)),this,SLOT(onbeforeBtn()));
     connect(ui->nextbtn,SIGNAL(clicked(bool)),this,SLOT(onnextBtn()));
     connect(ui->sendbtn,SIGNAL(clicked(bool)),this,SLOT(onsendBtn()));
+
 }
 
 Widget::~Widget()
@@ -24,6 +25,8 @@ int Widget::onopenBtn()
                                                     NULL,\
                                                     "Images (*.jpeg *.jpg)",\
                                                     0);
+    if(!filename.isNull())
+    {
     QFileInfo fileInfo(filename);
     QDir dir(fileInfo.absolutePath());
     QStringList filters;
@@ -34,9 +37,13 @@ int Widget::onopenBtn()
     list = dir.entryInfoList();
     index=list.indexOf(fileInfo);//获取文件在目录下的序号
     fileInfo = list.at(index);
+    imagename=fileInfo.absoluteFilePath();
+    qDebug()<<index<<imagename;
+    ui->label->setText(imagename);
+    ui->showlabel->imagename=imagename;
 
-    qDebug()<<index<<fileInfo.absoluteFilePath();
 
+    }
     return 0;
 }
 
@@ -44,16 +51,22 @@ int Widget::onopenpathBtn()
 {
     index=0;
     QString temp=QFileDialog::getExistingDirectory ();
+    if(!temp.isNull())
+    {
     QDir dir(temp);
     QStringList filters;
-    filters << "*.jpg" << "*.jpeg" ;
+    filters << "*.jpg" << "*.jpeg"  ;
     dir.setNameFilters(filters);
     dir.setFilter(QDir::Files | QDir::Hidden | QDir::NoSymLinks);
     dir.setSorting(QDir::Name);
     list = dir.entryInfoList();
     QFileInfo fileInfo;
     fileInfo = list.at(index);
-    qDebug()<<index<<fileInfo.absoluteFilePath();
+    imagename=fileInfo.absoluteFilePath();
+    qDebug()<<index<<imagename;
+    ui->label->setText(imagename);
+ui->showlabel->imagename=imagename;
+    }
     return 0;
 }
 
@@ -65,8 +78,11 @@ int Widget::onbeforeBtn()
     index++;
    }
     QFileInfo fileInfo = list.at(index);
-    qDebug()<<index<<fileInfo.absoluteFilePath();
-    return 0;
+    imagename=fileInfo.absoluteFilePath();
+    qDebug()<<index<<imagename;
+    ui->label->setText(imagename);
+    ui->showlabel->imagename=imagename;
+    ui->showlabel->update();
     return 0;
 }
 
@@ -78,7 +94,11 @@ int Widget::onnextBtn()
     index--;
    }
     QFileInfo fileInfo = list.at(index);
-    qDebug()<<index<<fileInfo.absoluteFilePath();
+    imagename=fileInfo.absoluteFilePath();
+    qDebug()<<index<<imagename;
+    ui->label->setText(imagename);
+    ui->showlabel->imagename=imagename;
+    ui->showlabel->update();
     return 0;
 }
 
@@ -87,3 +107,6 @@ int Widget::onsendBtn()
 
     return 0;
 }
+
+
+

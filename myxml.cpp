@@ -41,8 +41,8 @@ int MyXML::readxml(const char *filename)//return the Object number
              m_info.m_date=node.childNodes().at(1).toElement().text();
          }
      }
-        qDebug()<<m_info.m_author;
-        qDebug()<<m_info.m_date;
+     //   qDebug()<<m_info.m_author;
+   //     qDebug()<<m_info.m_date;
     }
 //-------------------------------------------------------------------------------------------------------------------------------------";
     if(name == "object")
@@ -65,9 +65,9 @@ int MyXML::readxml(const char *filename)//return the Object number
 }
     count++;
     int temp=count;
-    qDebug()<<m_object[temp-1].m_name;
-    qDebug()<<m_object[temp-1].m_start;
-    qDebug()<<m_object[temp-1].m_end;
+   // qDebug()<<m_object[temp-1].m_name;
+   // qDebug()<<m_object[temp-1].m_start;
+  //  qDebug()<<m_object[temp-1].m_end;
     }
  //------------------------------------------------------------------------------------------------------------------------------------------------
     node = node.nextSibling();

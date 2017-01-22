@@ -11,30 +11,55 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Widget</string>
+   <string>ImageCheck</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="icon.qrc">
+    <normaloff>:/new/prefix1/1.png</normaloff>:/new/prefix1/1.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout" stretch="30,2">
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="30,1">
+      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="35,1">
        <item>
         <widget class="QScrollArea" name="scrollArea">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="widgetResizable">
           <bool>true</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
          </property>
          <widget class="QWidget" name="scrollAreaWidgetContents">
           <property name="geometry">
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>592</width>
+            <width>616</width>
             <height>424</height>
            </rect>
           </property>
           <layout class="QGridLayout" name="gridLayout">
            <item row="0" column="0">
             <widget class="ShowView" name="showlabel">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="text">
               <string/>
              </property>
@@ -47,7 +72,7 @@
        <item>
         <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>TextLabel</string>
+          <string/>
          </property>
         </widget>
        </item>
@@ -56,7 +81,7 @@
      <item>
       <widget class="QGroupBox" name="groupBox">
        <property name="title">
-        <string>GroupBox</string>
+        <string>功能</string>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
@@ -69,6 +94,16 @@
           </property>
           <property name="text">
            <string>打开文件</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icon.qrc">
+            <normaloff>:/new/prefix1/2.png</normaloff>:/new/prefix1/2.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
           </property>
          </widget>
         </item>
@@ -83,6 +118,16 @@
           <property name="text">
            <string>打开文件夹</string>
           </property>
+          <property name="icon">
+           <iconset resource="icon.qrc">
+            <normaloff>:/new/prefix1/3.png</normaloff>:/new/prefix1/3.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
          </widget>
         </item>
         <item>
@@ -95,6 +140,16 @@
           </property>
           <property name="text">
            <string>上一页</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icon.qrc">
+            <normaloff>:/new/prefix1/5.png</normaloff>:/new/prefix1/5.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
           </property>
          </widget>
         </item>
@@ -109,6 +164,16 @@
           <property name="text">
            <string>下一页</string>
           </property>
+          <property name="icon">
+           <iconset resource="icon.qrc">
+            <normaloff>:/new/prefix1/next_1068px_1190651_easyicon.net.png</normaloff>:/new/prefix1/next_1068px_1190651_easyicon.net.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
+          </property>
          </widget>
         </item>
         <item>
@@ -121,6 +186,16 @@
           </property>
           <property name="text">
            <string>发送</string>
+          </property>
+          <property name="icon">
+           <iconset resource="icon.qrc">
+            <normaloff>:/new/prefix1/6.png</normaloff>:/new/prefix1/6.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>48</width>
+            <height>48</height>
+           </size>
           </property>
          </widget>
         </item>
@@ -146,6 +221,8 @@
    <header location="global">showview.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="icon.qrc"/>
+ </resources>
  <connections/>
 </ui>

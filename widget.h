@@ -21,7 +21,10 @@ public:
 
     ~Widget();
 public:
+
     QString imagename;
+    QString xmlname;
+    QFileInfo mfileInfo;
     QFileInfoList list; //保存的是路径下的文件列表；
     int index=0;          //保存的是文件在列表中的序号；
 public slots:
